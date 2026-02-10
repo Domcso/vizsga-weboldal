@@ -1,0 +1,243 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Alap */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f4ff, #e8ecf8);
+    color: #2c2c2c;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+}
+
+/* Animációk */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fejléc */
+header {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Navigáció */
+nav {
+    background-color: #1f2933;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    color: #e5e7eb;
+    text-decoration: none;
+    padding: 15px 22px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #4f46e5;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Tartalom */
+main {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+/* Szekciók */
+section {
+    background-color: white;
+    padding: 28px;
+    margin-bottom: 28px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Címsorok */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #4f46e5;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Címsor aláhúzás effekt */
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 50px;
+    height: 3px;
+    background-color: #6366f1;
+    border-radius: 2px;
+}
+
+/* Szöveg */
+section p {
+    margin-bottom: 12px;
+}
+
+/* Dőlt, kiemelt szöveg */
+em {
+    font-style: italic;
+    color: #4f46e5;
+    font-weight: 500;
+}
+
+/* Projektek */
+.projekt {
+    background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    border-left: 5px solid #4f46e5;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projekt h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.projekt p {
+    font-style: italic;
+}
+
+.projekt:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 25px rgba(79, 70, 229, 0.25);
+}
+
+/* Média */
+.media-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.kep-hely,
+.video-hely {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    color: #6366f1;
+}
+
+/* Kép hely */
+.kep-hely {
+    flex: 1;
+    min-width: 250px;
+    height: 200px;
+    border: 2px dashed #a5b4fc;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.kep-hely:hover {
+    background-color: #eef2ff;
+    transform: scale(1.04) rotate(-1deg);
+}
+
+/* Videó hely */
+.video-hely {
+    margin-top: 25px;
+    height: 260px;
+    border: 2px dashed #a5b4fc;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Kapcsolat */
+#kapcsolat p {
+    font-style: italic;
+}
+
+/* Lábléc */
+footer {
+    background-color: #1f2933;
+    color: #e5e7eb;
+    text-align: center;
+    padding: 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2.1rem;
+    }
+}
+
+section {
+    scroll-margin-top: 90px; /* sticky menü miatt */
+}
+
+/* amikor egy szekció a célpont */
+section:target {
+    animation: highlight 0.8s ease;
+}
+
+@keyframes highlight {
+    from {
+        box-shadow: 0 0 0 rgba(79, 70, 229, 0);
+        transform: scale(0.98);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(79, 70, 229, 0.35);
+        transform: scale(1);
+    }
+}

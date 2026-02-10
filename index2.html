@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    Oldalcím (böngésző fülén jelenik meg)
+  -->
+  <title>Portfólió – Ipari Informatikai Technikus (13.)</title>
+
+  <!--
+    Külső betűtípusok betöltése Google Fonts-ról.
+    (Ha offline kell a vizsgán: ezt ki lehet venni, és marad a rendszerfont.)
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Source+Code+Pro:wght@300;600&display=swap" rel="stylesheet">
+
+  <!--
+    Saját CSS fájl csatolása
+  -->
+  <link rel="stylesheet" href="style2.css" />
+</head>
+
+<body>
+  <!--
+    "Skip link": akadálymentesítés. Billentyűzettel gyorsan átugorható a menü.
+  -->
+  <a class="skip-link" href="#tartalom">Ugrás a tartalomra</a>
+
+  <!--
+    Felső fejléc + navigáció
+  -->
+  <header class="site-header" id="felso">
+    <nav class="navbar" aria-label="Fő navigáció">
+      <!--
+        Logó / név blokk (bal oldalt)
+      -->
+      <div class="brand">
+        <span class="brand__badge" aria-hidden="true">13</span>
+        <div class="brand__text">
+          <div class="brand__title">Portfólió</div>
+          <div class="brand__subtitle">Ipari informatikai technikus</div>
+        </div>
+      </div>
+
+      <!--
+        Navigációs menü (jobb oldalt)
+        Ezek a linkek az oldalon belüli szekciókra ugranak.
+      -->
+      <ul class="nav-links">
+        <li><a href="#rolam">Rólam</a></li>
+        <li><a href="#keszsegek">Készségek</a></li>
+        <li><a href="#projektek">Projektek</a></li>
+        <li><a href="#media">Média</a></li>
+        <li><a href="#kapcsolat">Kapcsolat</a></li>
+      </ul>
+
+      <!--
+        Egy kis gomb a "call to action" hatáshoz.
+        Nem kötelező, de vizsgán jól mutat: van kiemelt elem.
+      -->
+      <a class="cta" href="#projektek">Nézd meg a munkáimat</a>
+    </nav>
+  </header>
+
+  <!--
+    Fő tartalmi rész (main)
+  -->
+  <main id="tartalom">
+    <!--
+      HERO szekció: első nagy bemutatkozó rész, animált felirattal
+    -->
+    <section class="hero" aria-label="Bemutatkozó szakasz">
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          <!--
+            Dőlt szöveg (vizsgán kérés volt, hogy legyen)
+          -->
+          <em>13.-os végzős diák</em> • portfólió weboldal
+        </p>
+
+        <h1 class="hero__title">
+          Ipari informatikai technikus <span class="accent">vizsgaportfólió</span>
+        </h1>
+
+        <p class="hero__lead">
+          Ezen az oldalon bemutatom az eddigi iskolai munkáimat, projekteket,
+          és a szakmai fejlődésemet. A cél: <strong>átlátható</strong>,
+          <strong>védhető</strong> és <strong>látványos</strong> portfólió.
+        </p>
+
+        <div class="hero__buttons">
+          <a class="btn btn--primary" href="#rolam">Kezdjük →</a>
+          <a class="btn btn--ghost" href="#media">Képek / videók</a>
+        </div>
+
+        <!--
+          Infókártyák: gyors "statisztikák"
+          Ezeket nyugodtan átírhatod saját számokra.
+        -->
+        <div class="quick-stats" role="list">
+          <div class="stat" role="listitem">
+            <div class="stat__num">8+</div>
+            <div class="stat__label">projekt</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat__num">3</div>
+            <div class="stat__label">fő terület</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat__num">100%</div>
+            <div class="stat__label">kommentelt kód</div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        Dekoratív panel (jobb oldal): ide később tehetsz képet is.
+        Most csak stílusos "kártya".
+      -->
+      <div class="hero__panel" aria-hidden="true">
+        <div class="code-card">
+          <div class="code-card__top">
+            <span class="dot dot--1"></span>
+            <span class="dot dot--2"></span>
+            <span class="dot dot--3"></span>
+          </div>
+          <pre class="code-card__body"><code>// Vizsgára készített portfólió
+// HTML + CSS, animációk, media helyek
+// Narancs + fekete design
+
+function hello() {
+  return "Szia! :)";
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Rólam szekció
+    -->
+    <section class="section" id="rolam">
+      <div class="section__header">
+        <h2>Rólam</h2>
+        <p class="section__sub">
+          Rövid bemutatkozás, célok, motiváció — amit a védésnél el tudsz mondani.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <!--
+          Bal oldali kártya: szöveg
+        -->
+        <article class="card">
+          <h3>Ki vagyok én?</h3>
+          <p>
+            <strong>13.-os végzős</strong> ipari informatikai technikus tanuló vagyok.
+            A célom, hogy a szakmai vizsgán <em>magabiztosan</em> be tudjam mutatni
+            az eddigi munkáimat.
+          </p>
+          <p>
+            Szeretek olyan projekteken dolgozni, ahol van hálózat, automatizálás,
+            szerver/virtualizáció, vagy valamilyen <strong>valós probléma</strong>.
+          </p>
+
+          <!--
+            Lista: jól áttekinthető pontok
+          -->
+          <ul class="checklist">
+            <li>Dokumentációk és portfóliók készítése</li>
+            <li>Hálózatok tervezése (pl. Packet Tracer)</li>
+            <li>Alap szerver / konténer környezetek</li>
+          </ul>
+        </article>
+
+        <!--
+          Jobb oldali kártya: "profilkép helye"
+          Ide majd be tudsz tenni egy saját képet.
+        -->
+        <article class="card card--media">
+          <h3>Profilkép helye</h3>
+
+          <!--
+            Kép helykitöltő (placeholder).
+            Később: cseréld ki a src értékét a saját képedre.
+          -->
+          <figure class="media-box">
+            <img
+              src="images/placeholder-profile.jpg"
+              alt="Profilkép helye (cseréld le a saját képedre)"
+              loading="lazy"
+            />
+            <figcaption>
+              Tipp: használd a <em>images</em> mappát (pl. <strong>profile.jpg</strong>)
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!--
+      Készségek szekció
+    -->
+    <section class="section" id="keszsegek">
+      <div class="section__header">
+        <h2>Készségek</h2>
+        <p class="section__sub">
+          Itt felsorolod a tanult technológiákat és szintedet.
+        </p>
+      </div>
+
+      <!--
+        Kártyák rácsban
+      -->
+      <div class="grid three">
+        <article class="card">
+          <h3>Hálózat</h3>
+          <p class="muted">
+            Alap hálózati fogalmak, topológiák, IP-címzés, VLAN, NAT.
+          </p>
+          <!--
+            "Progress bar" jellegű megoldás CSS-sel
+          -->
+          <div class="meter" aria-label="Hálózat tudásszint">
+            <span class="meter__fill" style="width: 75%"></span>
+          </div>
+          <p class="hint"><em>Szint:</em> közép-haladó</p>
+        </article>
+
+        <article class="card">
+          <h3>Linux / Szerver</h3>
+          <p class="muted">
+            Alap parancsok, szolgáltatások, jogosultságok, egyszerű webkiszolgálás.
+          </p>
+          <div class="meter" aria-label="Linux tudásszint">
+            <span class="meter__fill" style="width: 70%"></span>
+          </div>
+          <p class="hint"><em>Szint:</em> közép</p>
+        </article>
+
+        <article class="card">
+          <h3>Web / Dokumentálás</h3>
+          <p class="muted">
+            HTML, CSS, strukturált dokumentáció, vizsgára védhető bemutatás.
+          </p>
+          <div class="meter" aria-label="Web tudásszint">
+            <span class="meter__fill" style="width: 80%"></span>
+          </div>
+          <p class="hint"><em>Szint:</em> közép-haladó</p>
+        </article>
+      </div>
+    </section>
+
+    <!--
+      Projektek szekció
+      Itt mutatod be a legfontosabb munkáidat kártyákban.
+    -->
+    <section class="section" id="projektek">
+      <div class="section__header">
+        <h2>Projektek</h2>
+        <p class="section__sub">
+          Minden projekt külön kártya: cél, technológiák, eredmény.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <!-- Projekt 1 -->
+        <article class="card project">
+          <div class="project__top">
+            <h3>Hálózati terv – termelőüzem (Packet Tracer)</h3>
+            <span class="tag">Cisco</span>
+            <span class="tag">NAT</span>
+            <span class="tag">VLAN</span>
+          </div>
+
+          <p>
+            A feladat egy termelőüzem helyi hálózatának megtervezése és szimulációja.
+            A cél: logikus szegmentálás, <strong>biztonságos</strong> felépítés és
+            <em>működő</em> NAT/átjáró.
+          </p>
+
+          <ul class="bullets">
+            <li>Topológia: több alhálózat (iroda / üzem / szerver)</li>
+            <li>IP-címzés terv + eszközök beállítása</li>
+            <li>Dokumentálás: mi miért lett úgy</li>
+          </ul>
+
+          <!-- Projekt gombok -->
+          <div class="project__actions">
+            <a class="btn btn--small btn--primary" href="#media">Képek</a>
+            <a class="btn btn--small btn--ghost" href="#kapcsolat">Kérdés?</a>
+          </div>
+        </article>
+
+        <!-- Projekt 2 -->
+        <article class="card project">
+          <div class="project__top">
+            <h3>VirtualBox + Docker környezet</h3>
+            <span class="tag">Docker</span>
+            <span class="tag">Portainer</span>
+            <span class="tag">HTTPD</span>
+          </div>
+
+          <p>
+            Konténeres szolgáltatások beállítása, NAT porttovábbítással.
+            A cél: átlátható admin felület és stabil futás.
+          </p>
+
+          <ul class="bullets">
+            <li>Portainer menedzsment felület</li>
+            <li>HTTPD (webkiszolgáló) konténer</li>
+            <li>Filebrowser stack (fájlkezelés böngészőből)</li>
+          </ul>
+
+          <div class="project__actions">
+            <a class="btn btn--small btn--primary" href="#media">Videó</a>
+            <a class="btn btn--small btn--ghost" href="#kapcsolat">Kapcsolat</a>
+          </div>
+        </article>
+
+        <!-- Projekt 3 -->
+        <article class="card project">
+          <div class="project__top">
+            <h3>Arduino – Smart Home (Keyestudio)</h3>
+            <span class="tag">Arduino</span>
+            <span class="tag">Szenzor</span>
+            <span class="tag">C++</span>
+          </div>
+
+          <p>
+            Szenzorok és vezérlés bemutatása: mérés, reakció, kijelzés.
+            A dokumentációban: kapcsolási rajz, kód, működés.
+          </p>
+
+          <ul class="bullets">
+            <li>Szenzor adatok feldolgozása</li>
+            <li>Vezérlés logika (if/else, küszöbértékek)</li>
+            <li>Projekt bemutató videó</li>
+          </ul>
+
+          <div class="project__actions">
+            <a class="btn btn--small btn--primary" href="#media">Média</a>
+            <a class="btn btn--small btn--ghost" href="#rolam">Rólam</a>
+          </div>
+        </article>
+
+        <!-- Projekt 4 (sablonként hagyva) -->
+        <article class="card project project--template">
+          <div class="project__top">
+            <h3>+ Új projekt helye</h3>
+            <span class="tag">Sablon</span>
+          </div>
+
+          <p class="muted">
+            Ide írhatod a következő projektedet. Másold ezt a kártyát, nevezd át,
+            és töltsd ki a pontokat.
+          </p>
+
+          <ul class="bullets">
+            <li>Cél: ...</li>
+            <li>Technológiák: ...</li>
+            <li>Eredmény: ...</li>
+          </ul>
+
+          <div class="project__actions">
+            <a class="btn btn--small btn--primary" href="#kapcsolat">Kérdezz</a>
+            <a class="btn btn--small btn--ghost" href="#felso">Fel</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!--
+      Média szekció: képek és videók helye
+      Itt a felhasználó majd beilleszti a saját fájljait.
+    -->
+    <section class="section" id="media">
+      <div class="section__header">
+        <h2>Média</h2>
+        <p class="section__sub">
+          Képgaléria és videók (helykitöltőkkel).
+        </p>
+      </div>
+
+      <!-- Képek -->
+      <div class="card">
+        <h3>Képek (placeholder)</h3>
+
+        <!--
+          Képrács: több képet tudsz később betenni
+          Cseréld a src értékeket a saját képeidre
+        -->
+        <div class="media-grid">
+          <figure class="media-thumb">
+            <img src="images/placeholder-1.jpg" alt="Kép 1 helye" loading="lazy" />
+            <figcaption>Kép 1 – projekt fotó / screenshot</figcaption>
+          </figure>
+
+          <figure class="media-thumb">
+            <img src="images/placeholder-2.jpg" alt="Kép 2 helye" loading="lazy" />
+            <figcaption>Kép 2 – topológia / diagram</figcaption>
+          </figure>
+
+          <figure class="media-thumb">
+            <img src="images/placeholder-3.jpg" alt="Kép 3 helye" loading="lazy" />
+            <figcaption>Kép 3 – eredmény / UI</figcaption>
+          </figure>
+
+          <figure class="media-thumb">
+            <img src="images/placeholder-4.jpg" alt="Kép 4 helye" loading="lazy" />
+            <figcaption>Kép 4 – egyéb</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Videók -->
+      <div class="card">
+        <h3>Videók (placeholder)</h3>
+
+        <div class="grid two">
+          <!--
+            Videó helye (local file)
+            src: majd a saját videód fájlneve (pl. media/demo.mp4)
+          -->
+          <div class="video-box">
+            <video controls preload="metadata">
+              <source src="media/placeholder-video-1.mp4" type="video/mp4" />
+              <!--
+                Ha a böngésző nem támogatja a videót, ez a szöveg jelenik meg.
+              -->
+              A böngésződ nem támogatja a videó lejátszást.
+            </video>
+            <p class="hint">Videó 1 – projekt bemutató</p>
+          </div>
+
+          <!--
+            Második videó helye
+          -->
+          <div class="video-box">
+            <video controls preload="metadata">
+              <source src="media/placeholder-video-2.mp4" type="video/mp4" />
+              A böngésződ nem támogatja a videó lejátszást.
+            </video>
+            <p class="hint">Videó 2 – működés / teszt</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Kapcsolat szekció
+      Fontos: itt csak placeholder adatok vannak.
+    -->
+    <section class="section" id="kapcsolat">
+      <div class="section__header">
+        <h2>Kapcsolat</h2>
+        <p class="section__sub">
+          Írd át a saját adataidra. (Email / telefonszám opcionális.)
+        </p>
+      </div>
+
+      <div class="grid two">
+        <article class="card">
+          <h3>Elérhetőségek</h3>
+          <p><strong>Név:</strong> Ide írd a neved</p>
+          <p><strong>Osztály:</strong> 13. (ipari informatikai technikus)</p>
+          <p><strong>Email:</strong> valami@example.com</p>
+          <p class="muted">
+            Megjegyzés: ha a vizsgán nem akarod kitenni a valós adataidat,
+            használhatsz „dummy” adatokat.
+          </p>
+        </article>
+
+        <!--
+          Egyszerű "űrlap" (nem küld el semmit, csak vizuális).
+          Vizsgán jól néz ki, és könnyű elmagyarázni.
+        -->
+        <article class="card">
+          <h3>Üzenet (bemutató űrlap)</h3>
+
+          <form class="form" action="#" method="post">
+            <label>
+              <span>Név</span>
+              <input type="text" name="name" placeholder="Pl.: Teszt Elek" />
+            </label>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="Pl.: teszt@pelda.hu" />
+            </label>
+
+            <label>
+              <span>Üzenet</span>
+              <textarea name="message" rows="4" placeholder="Ide írhatsz valamit..."></textarea>
+            </label>
+
+            <!--
+              Gomb: csak design, action="#"
+            -->
+            <button class="btn btn--primary" type="submit">
+              Küldés (demo)
+            </button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Lábléc
+  -->
+  <footer class="footer">
+    <p>
+      © <span id="ev">2026</span> • Portfólió •
+      <a href="#felso">Vissza a tetejére</a>
+    </p>
+    <p class="muted">
+      Készítve vizsgára: <strong>HTML + CSS</strong>, narancs/fekete stílus, animációk.
+    </p>
+  </footer>
+
+  <!--
+    Mini JavaScript nélkül is működik minden.
+    Az évszám fixen is maradhat, de így "automatikus".
+    (Ha a vizsgán nem akarsz JS-t: töröld ezt a scriptet.)
+  -->
+  <script>
+    // Beállítjuk az aktuális évet a footerben
+    document.getElementById("ev").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
