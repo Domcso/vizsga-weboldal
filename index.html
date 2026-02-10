@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--
     Oldalcím (böngésző fülén jelenik meg)
@@ -20,7 +20,7 @@
   <!--
     Saját CSS fájl csatolása
   -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
@@ -95,25 +95,6 @@
           <a class="btn btn--primary" href="#rolam">Kezdjük →</a>
           <a class="btn btn--ghost" href="#media">Képek / videók</a>
         </div>
-
-        <!--
-          Infókártyák: gyors "statisztikák"
-          Ezeket nyugodtan átírhatod saját számokra.
-        -->
-        <div class="quick-stats" role="list">
-          <div class="stat" role="listitem">
-            <div class="stat__num">8+</div>
-            <div class="stat__label">projekt</div>
-          </div>
-          <div class="stat" role="listitem">
-            <div class="stat__num">3</div>
-            <div class="stat__label">fő terület</div>
-          </div>
-          <div class="stat" role="listitem">
-            <div class="stat__num">100%</div>
-            <div class="stat__label">kommentelt kód</div>
-          </div>
-        </div>
       </div>
 
       <!--
@@ -132,7 +113,7 @@
 // Narancs + fekete design
 
 function hello() {
-  return "Szia! :)";
+  return "Szia! :)";    
 }</code></pre>
         </div>
       </div>
@@ -453,59 +434,34 @@ function hello() {
       Kapcsolat szekció
       Fontos: itt csak placeholder adatok vannak.
     -->
-    <section class="section" id="kapcsolat">
-      <div class="section__header">
-        <h2>Kapcsolat</h2>
-        <p class="section__sub">
-          Írd át a saját adataidra. (Email / telefonszám opcionális.)
-        </p>
-      </div>
+<section class="section" id="kapcsolat">
+  <div class="section__header">
+    <h2>Kapcsolat</h2>
+    <p class="section__sub">
+      Elérhetőségeim.
+    </p>
+  </div>
 
-      <div class="grid two">
-        <article class="card">
-          <h3>Elérhetőségek</h3>
-          <p><strong>Név:</strong> Ide írd a neved</p>
-          <p><strong>Osztály:</strong> 13. (ipari informatikai technikus)</p>
-          <p><strong>Email:</strong> valami@example.com</p>
-          <p class="muted">
-            Megjegyzés: ha a vizsgán nem akarod kitenni a valós adataidat,
-            használhatsz „dummy” adatokat.
-          </p>
-        </article>
+  <!-- Egyetlen kártya, teljes szélességben -->
+  <article class="card contact-card">
+    <h3>Elérhetőségek</h3>
 
-        <!--
-          Egyszerű "űrlap" (nem küld el semmit, csak vizuális).
-          Vizsgán jól néz ki, és könnyű elmagyarázni.
-        -->
-        <article class="card">
-          <h3>Üzenet (bemutató űrlap)</h3>
+    <!-- ÍRD ÁT A SAJÁT ADATAIDRA -->
+    <p><strong>Név:</strong> IDE ÍRD A NEVED</p>
+    <p><strong>Osztály:</strong> 13. (ipari informatikai technikus)</p>
+    <p><strong>Iskola:</strong> IDE ÍRD AZ ISKOLÁD</p>
 
-          <form class="form" action="#" method="post">
-            <label>
-              <span>Név</span>
-              <input type="text" name="name" placeholder="Pl.: Teszt Elek" />
-            </label>
+    <hr class="divider" />
 
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="Pl.: teszt@pelda.hu" />
-            </label>
+    <p><strong>Email:</strong> IDE ÍRD AZ EMAILED</p>
+    <p><strong>Telefonszám:</strong> IDE ÍRD A TELEFONSZÁMOD (ha kell)</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/IDE_A_GITHUB" target="_blank" rel="noopener">github.com/IDE_A_GITHUB</a></p>
 
-            <label>
-              <span>Üzenet</span>
-              <textarea name="message" rows="4" placeholder="Ide írhatsz valamit..."></textarea>
-            </label>
-
-            <!--
-              Gomb: csak design, action="#"
-            -->
-            <button class="btn btn--primary" type="submit">
-              Küldés (demo)
-            </button>
-          </form>
-        </article>
-      </div>
-    </section>
+    <p class="muted">
+      (Ha a vizsgán nem szeretnél valós adatot megadni, használhatsz „dummy” adatokat.)
+    </p>
+    </article>
+</section>
   </main>
 
   <!--
