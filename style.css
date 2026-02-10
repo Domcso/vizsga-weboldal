@@ -681,3 +681,16 @@ input:focus, textarea:focus {
     scroll-behavior: auto !important;
   }
 }
+
+/* Kapcsolat kártya: teljes szélesség + szellősebb */
+.contact-card {
+  width: 100%;
+}
+
+/* Egyszerű elválasztó vonal */
+.divider {
+  border: 0;
+  height: 1px;
+  margin: 14px 0;
+  background: rgba(255, 138, 0, 0.18);
+}
