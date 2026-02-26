@@ -694,3 +694,78 @@ input:focus, textarea:focus {
   margin: 14px 0;
   background: rgba(255, 138, 0, 0.18);
 }
+
+/* ===== NAV ALAP STÍLUS ===== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: orange;
+}
+
+/* ===== HAMBURGER ICON ===== */
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* checkbox elrejtése */
+#menu-toggle {
+  display: none;
+}
+
+/* ===== MOBIL NÉZET ===== */
+
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .nav a {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* amikor a checkbox be van pipálva */
+  #menu-toggle:checked ~ .nav {
+    display: flex;
+  }
+}
