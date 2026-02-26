@@ -32,38 +32,29 @@
   <!--
     Felső fejléc + navigáció
   -->
-  <header class="site-header" id="felso">
-    <nav class="navbar" aria-label="Fő navigáció">
-      <!--
-        Logó / név blokk (bal oldalt)
-      -->
-      <div class="brand">
-        <span class="brand__badge" aria-hidden="true">13</span>
-        <div class="brand__text">
-          <div class="brand__title">Portfólió</div>
-          <div class="brand__subtitle">Ipari informatikai technikus</div>
-        </div>
-      </div>
+<header class="header">
+  <div class="logo">
+    <span class="logo-circle">13</span>
+    <div class="logo-text">
+      <strong>Portfólió</strong>
+      <span>Ipari informatikai technikus</span>
+    </div>
+  </div>
 
-      <!--
-        Navigációs menü (jobb oldalt)
-        Ezek a linkek az oldalon belüli szekciókra ugranak.
-      -->
-      <ul class="nav-links">
-        <li><a href="#rolam">Rólam</a></li>
-        <li><a href="#keszsegek">Készségek</a></li>
-        <li><a href="#projektek">Projektek</a></li>
-        <li><a href="#media">Média</a></li>
-        <li><a href="#kapcsolat">Kapcsolat</a></li>
-      </ul>
+  <!-- mobil hamburger toggle -->
+  <input type="checkbox" id="menu-toggle" />
 
-      <!--
-        Egy kis gomb a "call to action" hatáshoz.
-        Nem kötelező, de vizsgán jól mutat: van kiemelt elem.
-      -->
-      <a class="cta" href="#projektek">Nézd meg a munkáimat</a>
-    </nav>
-  </header>
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
+  <!-- navigáció -->
+  <nav class="nav">
+    <a href="#rolam">Rólam</a>
+    <a href="#keszsegek">Készségek</a>
+    <a href="#projektek">Projektek</a>
+    <a href="#media">Média</a>
+    <a href="#kapcsolat">Kapcsolat</a>
+  </nav>
+</header>
 
   <!--
     Fő tartalmi rész (main)
