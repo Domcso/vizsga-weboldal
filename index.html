@@ -497,5 +497,13 @@ function hello() {
     // Beállítjuk az aktuális évet a footerben
     document.getElementById("ev").textContent = new Date().getFullYear();
   </script>
+
+  <script>
+  document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
+</script>
 </body>
 </html>
