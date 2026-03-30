@@ -3,52 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!--
-    Oldalcím (böngésző fülén jelenik meg)
-  -->
   <title>Portfólió – Ipari Informatikai Technikus (13.)</title>
 
-  <!--
-    Külső betűtípusok betöltése Google Fonts-ról.
-    (Ha offline kell a vizsgán: ezt ki lehet venni, és marad a rendszerfont.)
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Source+Code+Pro:wght@300;600&display=swap" rel="stylesheet">
 
-  <!--
-    Saját CSS fájl csatolása
-  -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <!--
-    "Skip link": akadálymentesítés. Billentyűzettel gyorsan átugorható a menü.
-  -->
   <a class="skip-link" href="#tartalom">Ugrás a tartalomra</a>
 
-  <!--
-    Felső fejléc + navigáció
-  -->
   <header class="site-header" id="felso">
     <nav class="navbar" aria-label="Fő navigáció">
-      <!--
-        Logó / név blokk (bal oldalt)
-      -->
+      
       <div class="brand">
-        <span class="brand__badge" aria-hidden="true">13</span>
+        <span class="brand__logo" aria-hidden="true">PD</span>
         <div class="brand__text">
           <div class="brand__title">Portfólió</div>
           <div class="brand__subtitle">Ipari informatikai technikus</div>
         </div>
       </div>
 
-      <!--
-        Navigációs menü (jobb oldalt)
-        Ezek a linkek az oldalon belüli szekciókra ugranak.
-      -->
+      <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+      <label for="menu-toggle" class="hamburger" aria-label="Menü megnyitása">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </label>
+
       <ul class="nav-links">
         <li><a href="#rolam">Rólam</a></li>
         <li><a href="#keszsegek">Készségek</a></li>
@@ -57,65 +41,30 @@
         <li><a href="#kapcsolat">Kapcsolat</a></li>
       </ul>
 
-      <!--
-        Egy kis gomb a "call to action" hatáshoz.
-        Nem kötelező, de vizsgán jól mutat: van kiemelt elem.
-      -->
       <a class="cta" href="#projektek">Nézd meg a munkáimat</a>
     </nav>
-
-    <!-- Hamburger toggle -->
-<input type="checkbox" id="menu-toggle">
-
-<label for="menu-toggle" class="hamburger">
-  ☰
-</label>
-
-<nav class="mobile-nav">
-  <a href="#rolam">Rólam</a>
-  <a href="#keszsegek">Készségek</a>
-  <a href="#projektek">Projektek</a>
-  <a href="#media">Média</a>
-  <a href="#kapcsolat">Kapcsolat</a>
-</nav>   
   </header>
 
-  <!--
-    Fő tartalmi rész (main)
-  -->
   <main id="tartalom">
-    <!--
-      HERO szekció: első nagy bemutatkozó rész, animált felirattal
-    -->
     <section class="hero" aria-label="Bemutatkozó szakasz">
       <div class="hero__content">
         <p class="hero__eyebrow">
-          <!--
-            Dőlt szöveg (vizsgán kérés volt, hogy legyen)
-          -->
           <em>13.-os végzős diák</em> • portfólió weboldal
         </p>
-
         <h1 class="hero__title">
           Ipari informatikai technikus <span class="accent">vizsgaportfólió</span>
         </h1>
-
         <p class="hero__lead">
           Ezen az oldalon bemutatom az eddigi iskolai munkáimat, projekteket,
           és a szakmai fejlődésemet. A cél: <strong>átlátható</strong>,
           <strong>védhető</strong> és <strong>látványos</strong> portfólió.
         </p>
-
         <div class="hero__buttons">
           <a class="btn btn--primary" href="#rolam">Kezdjük →</a>
           <a class="btn btn--ghost" href="#media">Képek / videók</a>
         </div>
       </div>
 
-      <!--
-        Dekoratív panel (jobb oldal): ide később tehetsz képet is.
-        Most csak stílusos "kártya".
-      -->
       <div class="hero__panel" aria-hidden="true">
         <div class="code-card">
           <div class="code-card__top">
@@ -134,21 +83,12 @@ function hello() {
       </div>
     </section>
 
-    <!--
-      Rólam szekció
-    -->
     <section class="section" id="rolam">
       <div class="section__header">
         <h2>Rólam</h2>
-        <p class="section__sub">
-          Rövid bemutatkozás, célok, motiváció — amit a védésnél el tudsz mondani.
-        </p>
       </div>
 
       <div class="grid two">
-        <!--
-          Bal oldali kártya: szöveg
-        -->
         <article class="card">
           <h3>Ki vagyok én?</h3>
           <p>
@@ -160,10 +100,6 @@ function hello() {
             Szeretek olyan projekteken dolgozni, ahol van hálózat, automatizálás,
             szerver/virtualizáció, vagy valamilyen <strong>valós probléma</strong>.
           </p>
-
-          <!--
-            Lista: jól áttekinthető pontok
-          -->
           <ul class="checklist">
             <li>Dokumentációk és portfóliók készítése</li>
             <li>Hálózatok tervezése (pl. Packet Tracer)</li>
@@ -171,54 +107,25 @@ function hello() {
           </ul>
         </article>
 
-        <!--
-          Jobb oldali kártya: "profilkép helye"
-          Ide majd be tudsz tenni egy saját képet.
-        -->
         <article class="card card--media">
           <h3>Profilkép helye</h3>
-
-          <!--
-            Kép helykitöltő (placeholder).
-            Később: cseréld ki a src értékét a saját képedre.
-          -->
           <figure class="media-box">
-            <img
-              src="images/logo1.png"
-              alt="Profilkép helye (cseréld le a saját képedre)"
-              loading="lazy"
-            />
-            <figcaption>
-              Tipp: használd a <em>images</em> mappát (pl. <strong>profile.jpg</strong>)
-            </figcaption>
+            <img src="images/logo1.png" alt="Profilkép" loading="lazy" />
           </figure>
         </article>
       </div>
     </section>
 
-    <!--
-      Készségek szekció
-    -->
     <section class="section" id="keszsegek">
       <div class="section__header">
         <h2>Készségek</h2>
-        <p class="section__sub">
-          Itt felsorolod a tanult technológiákat és szintedet.
-        </p>
+        <p class="section__sub">Tanult technológiákat és azok szintjei.</p>
       </div>
 
-      <!--
-        Kártyák rácsban
-      -->
       <div class="grid three">
         <article class="card">
           <h3>Hálózat</h3>
-          <p class="muted">
-            Alap hálózati fogalmak, topológiák, IP-címzés, VLAN, NAT.
-          </p>
-          <!--
-            "Progress bar" jellegű megoldás CSS-sel
-          -->
+          <p class="muted">Alap hálózati fogalmak, topológiák, IP-címzés, VLAN, NAT.</p>
           <div class="meter" aria-label="Hálózat tudásszint">
             <span class="meter__fill" style="width: 75%"></span>
           </div>
@@ -227,9 +134,7 @@ function hello() {
 
         <article class="card">
           <h3>Linux / Szerver</h3>
-          <p class="muted">
-            Alap parancsok, szolgáltatások, jogosultságok, egyszerű webkiszolgálás.
-          </p>
+          <p class="muted">Alap parancsok, szolgáltatások, jogosultságok, webkiszolgálás.</p>
           <div class="meter" aria-label="Linux tudásszint">
             <span class="meter__fill" style="width: 70%"></span>
           </div>
@@ -238,9 +143,7 @@ function hello() {
 
         <article class="card">
           <h3>Web / Dokumentálás</h3>
-          <p class="muted">
-            HTML, CSS, strukturált dokumentáció, vizsgára védhető bemutatás.
-          </p>
+          <p class="muted">HTML, CSS, strukturált dokumentáció, webfejlesztés.</p>
           <div class="meter" aria-label="Web tudásszint">
             <span class="meter__fill" style="width: 80%"></span>
           </div>
@@ -249,195 +152,156 @@ function hello() {
       </div>
     </section>
 
-    <!--
-      Projektek szekció
-      Itt mutatod be a legfontosabb munkáidat kártyákban.
-    -->
     <section class="section" id="projektek">
       <div class="section__header">
         <h2>Projektek</h2>
-        <p class="section__sub">
-          Minden projekt külön kártya: cél, technológiák, eredmény.
-        </p>
+        <p class="section__sub">Minden projekt külön kártya: cél, technológiák, eredmény.</p>
       </div>
 
       <div class="grid two">
-        <!-- Projekt 1 -->
         <article class="card project">
           <div class="project__top">
             <h3>Hálózati terv – termelőüzem (Packet Tracer)</h3>
-            <span class="tag">Cisco</span>
-            <span class="tag">NAT</span>
-            <span class="tag">VLAN</span>
+            <span class="tag">Cisco</span><span class="tag">NAT</span><span class="tag">VLAN</span>
           </div>
-
-          <p>
-            A feladat egy termelőüzem helyi hálózatának megtervezése és szimulációja.
-            A cél: logikus szegmentálás, <strong>biztonságos</strong> felépítés és
-            <em>működő</em> NAT/átjáró.
-          </p>
-
+          <p>A feladat egy termelőüzem helyi hálózatának megtervezése és szimulációja.</p>
           <ul class="bullets">
             <li>Topológia: több alhálózat (iroda / üzem / szerver)</li>
             <li>IP-címzés terv + eszközök beállítása</li>
             <li>Dokumentálás: mi miért lett úgy</li>
           </ul>
-
-          <!-- Projekt gombok -->
           <div class="project__actions">
             <a class="btn btn--small btn--primary" href="#media">Képek</a>
             <a class="btn btn--small btn--ghost" href="#kapcsolat">Kérdés?</a>
           </div>
         </article>
 
-        <!-- Projekt 2 -->
         <article class="card project">
           <div class="project__top">
             <h3>VirtualBox + Docker környezet</h3>
-            <span class="tag">Docker</span>
-            <span class="tag">Portainer</span>
-            <span class="tag">HTTPD</span>
+            <span class="tag">Docker</span><span class="tag">Portainer</span><span class="tag">HTTPD</span>
           </div>
-
-          <p>
-            Konténeres szolgáltatások beállítása, NAT porttovábbítással.
-            A cél: átlátható admin felület és stabil futás.
-          </p>
-
+          <p>Konténeres szolgáltatások beállítása, NAT porttovábbítással.</p>
           <ul class="bullets">
             <li>Portainer menedzsment felület</li>
             <li>HTTPD (webkiszolgáló) konténer</li>
             <li>Filebrowser stack (fájlkezelés böngészőből)</li>
           </ul>
-
           <div class="project__actions">
             <a class="btn btn--small btn--primary" href="#media">Videó</a>
             <a class="btn btn--small btn--ghost" href="#kapcsolat">Kapcsolat</a>
           </div>
         </article>
 
-        <!-- Projekt 3 -->
         <article class="card project">
           <div class="project__top">
             <h3>Arduino – Smart Home (Keyestudio)</h3>
-            <span class="tag">Arduino</span>
-            <span class="tag">Szenzor</span>
-            <span class="tag">C++</span>
+            <span class="tag">Arduino</span><span class="tag">Szenzor</span><span class="tag">C++</span>
           </div>
-
-          <p>
-            Szenzorok és vezérlés bemutatása: mérés, reakció, kijelzés.
-            A dokumentációban: kapcsolási rajz, kód, működés.
-          </p>
-
+          <p>Szenzorok és vezérlés bemutatása: mérés, reakció, kijelzés.</p>
           <ul class="bullets">
             <li>Szenzor adatok feldolgozása</li>
             <li>Vezérlés logika (if/else, küszöbértékek)</li>
             <li>Projekt bemutató videó</li>
           </ul>
-
           <div class="project__actions">
             <a class="btn btn--small btn--primary" href="#media">Média</a>
             <a class="btn btn--small btn--ghost" href="#rolam">Rólam</a>
           </div>
         </article>
 
-        <!-- Projekt 4 (sablonként hagyva) -->
-        <article class="card project project--template">
+        <article class="card project">
           <div class="project__top">
-            <h3>+ Új projekt helye</h3>
-            <span class="tag">Sablon</span>
+            <h3>PLC alapú szállítószalag vezérlés</h3>
+            <span class="tag">Siemens</span><span class="tag">TIA Portal</span><span class="tag">Létra-diagram</span>
           </div>
-
-          <p class="muted">
-            Ide írhatod a következő projektedet. Másold ezt a kártyát, nevezd át,
-            és töltsd ki a pontokat.
-          </p>
-
+          <p>Egy logisztikai osztályozó rendszer automatizálása és biztonsági felügyelete.</p>
           <ul class="bullets">
-            <li>Cél: ...</li>
-            <li>Technológiák: ...</li>
-            <li>Eredmény: ...</li>
+            <li>Vezérlő logika megírása (Siemens S7-1200 környezetben)</li>
+            <li>HMI (kezelőfelület) tervezése a valós idejű monitorozáshoz</li>
+            <li>Vészleállító és szenzoros biztonsági körök integrálása</li>
           </ul>
-
           <div class="project__actions">
-            <a class="btn btn--small btn--primary" href="#kapcsolat">Kérdezz</a>
-            <a class="btn btn--small btn--ghost" href="#felso">Fel</a>
+            <a class="btn btn--small btn--primary" href="#media">Dokumentáció</a>
+            <a class="btn btn--small btn--ghost" href="#kapcsolat">Kérdezz</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!--
-      Média szekció: képek és videók helye
-      Itt a felhasználó majd beilleszti a saját fájljait.
-    -->
     <section class="section" id="media">
       <div class="section__header">
         <h2>Média</h2>
-        <p class="section__sub">
-          Képgaléria és videók (helykitöltőkkel).
-        </p>
+        <p class="section__sub">Képgaléria és videók.</p>
       </div>
 
-      <!-- Képek -->
       <div class="card">
-        <h3>Képek (placeholder)</h3>
-
-        <!--
-          Képrács: több képet tudsz később betenni
-          Cseréld a src értékeket a saját képeidre
-        -->
+        <h3>Képek</h3>
         <div class="media-grid">
-          <figure class="media-thumb">
-            <img src="images/placeholder-1.jpg" alt="Kép 1 helye" loading="lazy" />
-            <figcaption>Kép 1 – projekt fotó / screenshot</figcaption>
-          </figure>
+          <div class="slider-card">
+            <div class="slider-window">
+              <div class="slides">
+                <img src="images/IMG_9495.jpeg" alt="Projekt 1">
+                <img src="images/IMG_0280.jpeg" alt="Projekt 1 - b">
+              </div>
+              <button class="slide-arrow prev" onclick="moveSlide(this, -1)">&#10094;</button>
+              <button class="slide-arrow next" onclick="moveSlide(this, 1)">&#10095;</button>
+            </div>
+            <div class="card-caption">Kép 1 – projekt fotó / screenshot</div>
+          </div>
 
-          <figure class="media-thumb">
-            <img src="images/placeholder-2.jpg" alt="Kép 2 helye" loading="lazy" />
-            <figcaption>Kép 2 – topológia / diagram</figcaption>
-          </figure>
+          <div class="slider-card">
+            <div class="slider-window">
+              <div class="slides">
+                <img src="images/IMG_0280.jpeg" alt="Topológia">
+                <img src="images/IMG_1664.jpeg" alt="Topológia részlet">
+              </div>
+              <button class="slide-arrow prev" onclick="moveSlide(this, -1)">&#10094;</button>
+              <button class="slide-arrow next" onclick="moveSlide(this, 1)">&#10095;</button>
+            </div>
+            <div class="card-caption">Kép 2 – topológia / diagram</div>
+          </div>
 
-          <figure class="media-thumb">
-            <img src="images/placeholder-3.jpg" alt="Kép 3 helye" loading="lazy" />
-            <figcaption>Kép 3 – eredmény / UI</figcaption>
-          </figure>
+          <div class="slider-card">
+            <div class="slider-window">
+              <div class="slides">
+                <img src="images/IMG_7057.jpeg" alt="UI">
+                <img src="images/IMG_7058.jpeg" alt="UI mobil">
+              </div>
+              <button class="slide-arrow prev" onclick="moveSlide(this, -1)">&#10094;</button>
+              <button class="slide-arrow next" onclick="moveSlide(this, 1)">&#10095;</button>
+            </div>
+            <div class="card-caption">Kép 3 – eredmény / UI</div>
+          </div>
 
-          <figure class="media-thumb">
-            <img src="images/placeholder-4.jpg" alt="Kép 4 helye" loading="lazy" />
-            <figcaption>Kép 4 – egyéb</figcaption>
-          </figure>
+          <div class="slider-card">
+            <div class="slider-window">
+              <div class="slides">
+                <img src="images/IMG_7059.jpeg" alt="Egyéb">
+                <img src="images/IMG_7060.jpeg" alt="Egyéb fotó">
+              </div>
+              <button class="slide-arrow prev" onclick="moveSlide(this, -1)">&#10094;</button>
+              <button class="slide-arrow next" onclick="moveSlide(this, 1)">&#10095;</button>
+            </div>
+            <div class="card-caption">Kép 4 – egyéb</div>
+          </div>
         </div>
       </div>
 
-      <!-- Videók -->
       <div class="card">
-        <h3>Videók (placeholder)</h3>
-
+        <h3>Videók</h3>
         <div class="grid two">
-          <!--
-            Videó helye (local file)
-            src: majd a saját videód fájlneve (pl. media/demo.mp4)
-          -->
           <div class="video-box">
             <video controls preload="metadata">
-              <source src="media/placeholder-video-1.mp4" type="video/mp4" />
-              <!--
-                Ha a böngésző nem támogatja a videót, ez a szöveg jelenik meg.
-              -->
-              A böngésződ nem támogatja a videó lejátszást.
+              <source src="images/IMG_7776.MOV" type="video/mp4" />
+              A böngésződ nem támogatja a videót.
             </video>
             <p class="hint">Videó 1 – projekt bemutató</p>
           </div>
-
-          <!--
-            Második videó helye
-          -->
           <div class="video-box">
             <video controls preload="metadata">
-              <source src="media/placeholder-video-2.mp4" type="video/mp4" />
-              A böngésződ nem támogatja a videó lejátszást.
+              <source src="images/IMG_7776.MOV" type="video/mp4" />
+              A böngésződ nem támogatja a videót.
             </video>
             <p class="hint">Videó 2 – működés / teszt</p>
           </div>
@@ -445,65 +309,66 @@ function hello() {
       </div>
     </section>
 
-    <!--
-      Kapcsolat szekció
-      Fontos: itt csak placeholder adatok vannak.
-    -->
-<section class="section" id="kapcsolat">
-  <div class="section__header">
-    <h2>Kapcsolat</h2>
-    <p class="section__sub">
-      Elérhetőségeim.
-    </p>
-  </div>
-
-  <!-- Egyetlen kártya, teljes szélességben -->
-  <article class="card contact-card">
-    <h3>Elérhetőségek</h3>
-
-    <!-- ÍRD ÁT A SAJÁT ADATAIDRA -->
-    <p><strong>Név:</strong> Petri Dominik</p>
-    <p><strong>Osztály:</strong> 13. (ipari informatikai technikus)</p>
-    <p><strong>Iskola:</strong> BMSZC Trefort Ágoston Két Tanítási Nyelvű Technikum</p>
-
-    <hr class="divider" />
-
-    <p><strong>Email:</strong> dominik.petri2005@gmail.com</p>
-    <p><strong>GitHub:</strong> <a href="https://domcso.github.io/vizsga-weboldal/#projektek" target="_blank" rel="noopener">https://domcso.github.io/vizsga-weboldal/#projektek</a></p>
-
-    </article>
-</section>
+    <section class="section" id="kapcsolat">
+      <div class="section__header">
+        <h2>Kapcsolat</h2>
+      </div>
+      <article class="card contact-card">
+        <h3>Elérhetőségek</h3>
+        <p><strong>Név:</strong> Petri Dominik</p>
+        <p><strong>Osztály:</strong> 13. (ipari informatikai technikus)</p>
+        <p><strong>Iskola:</strong> BMSZC Trefort Ágoston Két Tanítási Nyelvű Technikum</p>
+        <hr class="divider" />
+        <p><strong>Email:</strong> dominik.petri2005@gmail.com</p>
+        <p><strong>GitHub:</strong> <a href="https://domcso.github.io/vizsga-weboldal/#projektek" target="_blank" rel="noopener">Megnyitás</a></p>
+      </article>
+    </section>
   </main>
 
-  <!--
-    Lábléc
-  -->
   <footer class="footer">
-    <p>
-      © <span id="ev">2026</span> • Portfólió •
-      <a href="#felso">Vissza a tetejére</a>
-    </p>
-    <p class="muted">
-      Készítve vizsgára: <strong>HTML + CSS</strong>, narancs/fekete stílus, animációk.
-    </p>
+    <p>© <span id="ev">2026</span> • Portfólió • <a href="#felso">Vissza a tetejére</a></p>
+    <p class="muted">Készítve vizsgára: <strong>HTML + CSS</strong></p>
   </footer>
 
-  <!--
-    Mini JavaScript nélkül is működik minden.
-    Az évszám fixen is maradhat, de így "automatikus".
-    (Ha a vizsgán nem akarsz JS-t: töröld ezt a scriptet.)
-  -->
-  <script>
-    // Beállítjuk az aktuális évet a footerben
-    document.getElementById("ev").textContent = new Date().getFullYear();
-  </script>
+  <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
+    <span class="lightbox__close">&times;</span>
+    <img id="lightbox-img" src="" alt="Nagyított kép">
+  </div>
 
   <script>
-  document.querySelectorAll('.mobile-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('menu-toggle').checked = false;
+    document.getElementById("ev").textContent = new Date().getFullYear();
+
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const menuCheckbox = document.getElementById('menu-toggle');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuCheckbox.checked = false;
+      });
     });
+
+    function moveSlide(button, direction) {
+      const window = button.parentElement;
+      const slides = window.querySelector('.slides');
+      const totalImages = slides.children.length;
+      let currentIndex = parseInt(slides.dataset.index || 0);
+      currentIndex += direction;
+      if (currentIndex >= totalImages) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = totalImages - 1;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      slides.dataset.index = currentIndex;
+    }
+
+    // Lightbox logika
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+
+    // Minden sliderben lévő képre ráakasztjuk a figyelőt
+    document.querySelectorAll('.slides img').forEach(image => {
+      image.addEventListener('click', () => {
+        lightboxImg.src = image.src; // Átmásoljuk a kép elérési útját
+        lightbox.classList.add('active'); // Megjelenítjük a lightboxot
   });
-</script>
+});
+  </script>
 </body>
 </html>
