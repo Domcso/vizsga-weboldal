@@ -43,18 +43,80 @@
 
       <a class="cta" href="#projektek">Nézd meg a munkáimat</a>
     </nav>
+  </header>
 
-    <main>
+  <main id="tartalom">
+    <section class="hero" aria-label="Bemutatkozó szakasz">
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          <em>13.-os végzős diák</em> • portfólió weboldal
+        </p>
+        <h1 class="hero__title">
+          Ipari informatikai technikus <span class="accent">vizsgaportfólió</span>
+        </h1>
+        <p class="hero__lead">
+          Ezen az oldalon bemutatom az eddigi iskolai munkáimat, projekteket,
+          és a szakmai fejlődésemet.
+        </p>
+        <div class="hero__buttons">
+          <a class="btn btn--primary" href="#rolam">Kezdjük →</a>
+          <a class="btn btn--ghost" href="#media">Képek / videók</a>
+        </div>
+      </div>
 
-        <section id="bemutatkozas">
-            <h2>Bemutatkozás</h2>
-            <p>
-                Végzős, 13. évfolyamos tanuló vagyok, ipari informatikai technikus
-                szakon. A szakmai vizsgám részeként készítettem el ezt a portfólió
-                weboldalt, amely bemutatja az iskolai éveim alatt készült munkáimat
-                és gyakorlataimat.
-            </p>
-        </section>
+      <div class="hero__panel" aria-hidden="true">
+        <div class="code-card">
+          <div class="code-card__top">
+            <span class="dot dot--1"></span>
+            <span class="dot dot--2"></span>
+            <span class="dot dot--3"></span>
+          </div>
+          <pre class="code-card__body"><code>// Vizsgára készített portfólió
+// HTML + CSS, animációk, media helyek
+// Narancs + fekete design
+
+function hello() {
+  return "Szia! :)";    
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section" id="rolam">
+      <div class="section__header">
+        <h2>Rólam</h2>
+      </div>
+
+      <!-- Új, egyesített kártya -->
+      <article class="card about-card">
+        
+        <!-- Bal oldal: Szöveges tartalom -->
+        <div class="about-card__text">
+          <h3>Ki vagyok én?</h3>
+          <p>
+            <strong>13.-os végzős</strong> ipari informatikai technikus tanuló vagyok.
+            A célom, hogy a szakmai vizsgán <em>magabiztosan</em> be tudjam mutatni
+            az eddigi munkáimat.
+          </p>
+          <p>
+            Szeretek olyan projekteken dolgozni, ahol van hálózat, automatizálás,
+            szerver/virtualizáció, vagy valamilyen <strong>valós probléma</strong>.
+          </p>
+          <ul class="checklist">
+            <li>Dokumentációk és portfóliók készítése</li>
+            <li>Hálózatok tervezése (pl. Packet Tracer)</li>
+            <li>Alap szerver / konténer környezetek</li>
+          </ul>
+        </div>
+
+        <!-- Jobb oldal: Profilkép -->
+        <div class="about-card__image-wrapper">
+          <img src="images/profilkep.jpeg" alt="Profilkép" class="about-card__img" loading="lazy" />
+        </div>
+
+      </article>
+    </section>
 
     <section class="section" id="keszsegek">
       <div class="section__header">
@@ -292,5 +354,103 @@
     <p class="muted">Készítve vizsgára: <strong>HTML + CSS</strong></p>
   </footer>
 
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox__close" id="lightbox-close">&times;</span>
+    <!-- Bal és jobb nyilak a nagyításhoz -->
+    <button class="lightbox__arrow prev" id="lightbox-prev">&#10094;</button>
+    <img id="lightbox-img" src="" alt="Nagyított kép">
+    <button class="lightbox__arrow next" id="lightbox-next">&#10095;</button>
+  </div>
+
+  <script>
+    document.getElementById("ev").textContent = new Date().getFullYear();
+
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const menuCheckbox = document.getElementById('menu-toggle');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuCheckbox.checked = false;
+      });
+    });
+
+    function moveSlide(button, direction) {
+      const window = button.parentElement;
+      const slides = window.querySelector('.slides');
+      const totalImages = slides.children.length;
+      let currentIndex = parseInt(slides.dataset.index || 0);
+      currentIndex += direction;
+      if (currentIndex >= totalImages) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = totalImages - 1;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      slides.dataset.index = currentIndex;
+    }
+
+// === ÚJ LIGHTBOX LOGIKA ===
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const btnPrev = document.getElementById('lightbox-prev');
+    const btnNext = document.getElementById('lightbox-next');
+
+    let currentGalleryImages = []; // Itt tároljuk az épp megnyitott projekt képeit
+    let currentImageIndex = 0;     // Itt tároljuk, hogy hanyadik képnél járunk
+
+    // 1. Képekre kattintás figyelése
+    document.querySelectorAll('.slides img').forEach(image => {
+      image.addEventListener('click', () => {
+        // Megkeressük azt a "slides" dobozt, amiben a kattintott kép van
+        const parentSlides = image.closest('.slides');
+        
+        // Kimentjük az abban a dobozban lévő összes képet egy tömbbe
+        currentGalleryImages = Array.from(parentSlides.querySelectorAll('img'));
+        
+        // Megnézzük, hogy a kattintott kép hányadik a sorban
+        currentImageIndex = currentGalleryImages.indexOf(image);
+
+        // Beállítjuk a forrást és megnyitjuk a Lightboxot
+        lightboxImg.src = currentGalleryImages[currentImageIndex].src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    // 2. Léptető funkció a Lightboxhoz
+    function navigateLightbox(direction) {
+      currentImageIndex += direction;
+
+      // Ha túllépünk a végén, ugorjunk az elejére, és fordítva
+      if (currentImageIndex >= currentGalleryImages.length) {
+        currentImageIndex = 0;
+      } else if (currentImageIndex < 0) {
+        currentImageIndex = currentGalleryImages.length - 1;
+      }
+
+      // Kép frissítése
+      lightboxImg.src = currentGalleryImages[currentImageIndex].src;
+    }
+
+    // 3. Nyilak eseménykezelői
+    btnPrev.addEventListener('click', (e) => {
+      e.stopPropagation(); // Ez meggátolja, hogy a kattintás bezárja a lightboxot
+      navigateLightbox(-1);
+    });
+
+    btnNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigateLightbox(1);
+    });
+
+    // 4. Bezárás logikája
+    // Ha az X-re kattintunk
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    // Ha a fekete háttérre kattintunk (de nem a képre vagy a nyilakra)
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
